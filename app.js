@@ -10,6 +10,10 @@ mercadopago.configure({
 });
  
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.raw());
  
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
