@@ -2,6 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var exphbs  = require('express-handlebars');
 const mercadopago = require ('mercadopago');
+const PORT = process.env.PORT || 3000;
 
 mercadopago.configure({
     access_token: process.env.MP_ACCESS_TOKEN,
@@ -89,4 +90,6 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
  
-app.listen(3000);
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
