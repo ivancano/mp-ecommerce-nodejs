@@ -1,6 +1,7 @@
 require('dotenv').config();
 var express = require('express');
 var exphbs  = require('express-handlebars');
+const bodyParser = require('body-parser');
 const mercadopago = require ('mercadopago');
 const PORT = process.env.PORT || 3000;
 
