@@ -67,7 +67,7 @@ app.get('/detail', function (req, res) {
     var result = req.query;
     mercadopago.preferences.create(preference)
     .then(function(response){
-        console.log(response);
+        console.log(JSON.stringify(response));
         result.init_point = response.body.init_point;
         res.render('detail', result);
     }).catch(function(error){
