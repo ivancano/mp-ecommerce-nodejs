@@ -45,7 +45,7 @@ app.get('/detail', function (req, res) {
                 id: 1234,
                 title: req.query.title,
                 description: "​Dispositivo móvil de Tienda e-commerce​",
-                unit_price: parseFloat(req.query.price),
+                unit_price: parseInt(req.query.price),
                 quantity: parseInt(req.query.unit),
                 picture_url: process.env.BASE_URL + req.query.img.replace('./', "")
             }
